@@ -1,0 +1,59 @@
+{
+  "name": "strapi-plugin-assistant",
+  "version": "0.0.1",
+  "description": "SSO springboard that embeds rust-bot's websockets-chat in the Strapi admin",
+  "keywords": ["strapi", "strapi-plugin", "assistant", "rust-bot"],
+  "type": "commonjs",
+  "license": "MIT",
+  "strapi": {
+    "kind": "plugin",
+    "name": "assistant",
+    "displayName": "Assistant",
+    "description": "Open the rust-bot chat assistant from the Strapi admin"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./admin/src/index.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./admin/src/index.ts",
+      "require": "./strapi-admin.js",
+      "default": "./admin/src/index.ts"
+    },
+    "./strapi-server": {
+      "source": "./strapi-server.js",
+      "import": "./strapi-server.js",
+      "require": "./strapi-server.js",
+      "default": "./strapi-server.js"
+    }
+  },
+  "files": ["dist", "strapi-server.js", "strapi-admin.js"],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "react-intl": "^6.6.0"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.3.2",
+    "@strapi/strapi": "^5.12.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.22.0",
+    "styled-components": "^6.1.0",
+    "typescript": "^5.6.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  }
+}
