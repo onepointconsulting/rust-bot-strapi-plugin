@@ -33,8 +33,20 @@ The plugin never sends a Strapi URL to rust-bot. If SSO returns 401 for a valid 
 Work **in your Strapi application**, not in this repository. The plugin is not on the npm registry; copy it into the host app and point Strapi at that folder.
 
 ```bash
-cd /path/to/your-strapi-app
+cd /path/to/your-strapi-app/
 git clone https://github.com/onepointconsulting/rust-bot-strapi-plugin.git src/plugins/assistant
+```
+
+After clone remove the `.git` folder from `src/plugins/assistant`
+
+```bash
+cd src/plugins/assistant
+rm -rf .git
+```
+
+```ps1
+cd src/plugins/assistant
+Remove-Item -Recurse -Force .git
 ```
 
 ### 2. Enable and configure
